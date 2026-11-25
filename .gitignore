@@ -1,0 +1,51 @@
+# ==============================================================================
+# Archivos auxiliares y temporales generados por LaTeX y Biber
+# Nota: NO se excluyen archivos .pdf, .tex, .bib, .png ni .jpg/.jpeg.
+# ==============================================================================
+
+# Compilación LaTeX
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.ps
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.loa
+*.xdv
+
+# Bibliografía (BibLaTeX / Biber / BibTeX)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# Índices, glosarios y otros auxiliares
+*.acn
+*.acr
+*.alg
+*.brf
+*.cb
+*.cb2
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.nav
+*.snm
+*.thm
+*.vrb
+
+# Entornos de desarrollo y archivos temporales del sistema operativo
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

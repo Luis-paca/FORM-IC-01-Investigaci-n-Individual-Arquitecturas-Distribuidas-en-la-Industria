@@ -1,0 +1,67 @@
+% ==============================================================================
+% FORM-IC-01 - Plantilla inicial del documento de entrega para el SGA (1 pagina)
+% Estado: Esqueleto inicial (Fase 1 - sin redaccion definitiva ni compilacion)
+% ==============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{csquotes}
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[
+  backend=biber,
+  style=ieee,
+  sorting=none
+]{biblatex}
+\addbibresource{referencias.bib}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+  {\large \textbf{UNIVERSIDAD T\'ECNICA ESTATAL DE QUEVEDO (UTEQ)}}\\[0.15cm]
+  {\normalsize Carrera de Ingenier\'ia de Software -- Aplicaciones Distribuidas}\\[0.25cm]
+  {\large \textbf{FORM-IC-01: Hoja de Entrega SGA (Una P\'agina)}}
+\end{center}
+
+\vspace{0.3cm}
+\noindent
+\begin{tabular}{@{}p{4.3cm}p{12.2cm}@{}}
+  \toprule
+  \textbf{Estudiante:}           & Luis Alberto Paca Pilataza \\
+  \textbf{Actividad:}            & FORM-IC-01 -- Investigaci\'on Individual: Arquitecturas Distribuidas en la Industria \\
+  \textbf{Semana / Modalidad:}   & Semana 5 / Individual (preparatoria para TA-IND-02, Semana 6) \\
+  \textbf{Docente:}              & [Completar: Nombre del docente] \\
+  \textbf{Curso / Paralelo:}     & [Completar: Curso y paralelo] \\
+  \textbf{Fecha de entrega:}     & [Completar: Fecha de entrega] \\
+  \textbf{Empresa y patr\'on:}   & Datalex -- Patr\'on API Gateway (Amazon API Gateway) \\
+  \textbf{Repositorio GitHub:}   & \url{https://github.com/Luis-paca/FORM-IC-01-Investigaci-n-Individual-Arquitecturas-Distribuidas-en-la-Industria} \\
+  \bottomrule
+\end{tabular}
+
+\section*{1. S\'intesis de la investigaci\'on}
+% TODO: Redactar en 1 parrafo breve (autoria del estudiante) el enfoque del caso
+% Datalex y el patron API Gateway, citando las fuentes verificadas cuando corresponda.
+
+\section*{2. Productos entregados en el repositorio}
+\begin{itemize}
+  \item \texttt{docs/main.tex} y PDF compilado del informe acad\'emico (\textit{[Pendiente de compilaci\'on]}).
+  \item \texttt{docs/referencias.bib}: fuente empresarial oficial y dos referencias acad\'emicas verificadas por DOI.
+  \item \texttt{docs/img/}: capturas reales de lectura y subrayado personal (\textit{[Pendiente de incorporaci\'on]}).
+\end{itemize}
+
+\section*{3. Enlaces y verificaci\'on de fuentes principales}
+% TODO: Confirmar en Fase 2 si se mostraran las citas aqui mediante \printbibliography
+% o un listado resumido acorde a las rubricas del SGA.
+
+\section*{4. Declaraci\'on de autor\'ia y uso de IA}
+% TODO: Completar antes de la entrega final en el SGA, indicando con transparencia
+% la autoria del estudiante y el alcance real del apoyo recibido mediante IA.
+
+\end{document}

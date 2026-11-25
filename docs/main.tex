@@ -1,0 +1,117 @@
+% ==============================================================================
+% FORM-IC-01 - Investigacion Individual: Arquitecturas Distribuidas en la Industria
+% Esqueleto inicial del informe academico (Fase 1 - sin redaccion definitiva)
+% Compilacion prevista (desde docs/):
+%   pdflatex main.tex
+%   biber main
+%   pdflatex main.tex
+%   pdflatex main.tex
+% ==============================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{csquotes}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[
+  backend=biber,
+  style=ieee,
+  sorting=none
+]{biblatex}
+\addbibresource{referencias.bib}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Portada inicial (completar campos institucionales pendientes en la Fase 2)
+% ------------------------------------------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{1cm}
+
+  {\Large \textbf{UNIVERSIDAD T\'ECNICA ESTATAL DE QUEVEDO (UTEQ)}\par}
+  \vspace{0.3cm}
+  {\large [Completar: Facultad]\par}
+  {\large Carrera de Ingenier\'ia de Software\par}
+
+  \vspace{1.8cm}
+  {\LARGE \textbf{Investigaci\'on Individual: Arquitecturas Distribuidas en la Industria}\par}
+  \vspace{0.6cm}
+  {\large Caso de estudio: Migraci\'on de las API REST de Datalex hacia Amazon API Gateway (Patr\'on API Gateway)\par}
+
+  \vspace{1.8cm}
+  \begin{tabular}{ll}
+    \textbf{C\'odigo de actividad:} & FORM-IC-01 (preparatoria para TA-IND-02) \\
+    \textbf{Asignatura:}            & Aplicaciones Distribuidas \\
+    \textbf{Semana:}                & 5 \\
+    \textbf{Modalidad:}             & Individual \\
+    \textbf{Estudiante:}            & Luis Alberto Paca Pilataza \\
+    \textbf{Docente:}               & [Completar: Nombre del docente] \\
+    \textbf{Curso / Paralelo:}      & [Completar: Curso y paralelo] \\
+    \textbf{Fecha:}                 & [Completar: Fecha de entrega] \\
+  \end{tabular}
+
+  \vfill
+  {\small Documento en fase de preparaci\'on estructural (Fase 1). Contenido acad\'emico pendiente de redacci\'on por el estudiante.\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ------------------------------------------------------------------------------
+% Estructura preliminar de secciones (sin redaccion definitiva)
+% ------------------------------------------------------------------------------
+
+\section{Introducci\'on y contexto de la empresa}
+% TODO: Redactar con autoria propia el contexto de Datalex, el problema de
+% investigacion y el objetivo del estudio a partir de la fuente oficial verificada.
+% Referencia prevista: \cite{prenty2020datalex}.
+
+\section{Marco te\'orico: el patr\'on arquitect\'onico API Gateway}
+% TODO: Desarrollar el fundamento academico del patron API Gateway en sistemas
+% distribuidos y microservicios, contrastando fuentes arbitradas verificadas.
+% Referencias previstas: \cite{aydemir2025apigateway}, \cite{moreira2023age}.
+
+\section{An\'alisis del caso de estudio: Datalex y Amazon API Gateway}
+\subsection{Arquitectura previa y motivos de la migraci\'on}
+% TODO: Describir la solucion API anterior, sus restricciones y los motivadores del cambio.
+
+\subsection{Arquitectura implementada y transici\'on en dos fases}
+% TODO: Explicar la Fase 1 (apiKeySource: AUTHORIZER + Lambda custom authorizer + CNAME)
+% y la Fase 2 (CloudFormation YAML + apiKeySource: HEADER con x-api-key).
+
+\subsection{Desaf\'ios t\'ecnicos, soluciones y resultados medibles}
+% TODO: Sintetizar retos, decisiones tecnicas, duracion (~2 semanas), continuidad
+% del servicio y alcance exacto del ahorro (~98 % en el costo operativo de la solucion API).
+
+\section{Limitaciones del caso de estudio y an\'alisis cr\'itico}
+% TODO: Discutir sesgos de fuente empresarial, metricas no divulgadas (trafico,
+% latencia, volumen de clientes/APIs) y riesgos tecnicos (p. ej., vendor lock-in).
+
+\section{Aplicaci\'on preliminar al PFC NEXORA}
+% TODO: Elaborar con autoria propia el analisis de aplicabilidad del patron API
+% Gateway al sistema web NEXORA, diferenciando funcionalidades conocidas,
+% propuestas arquitectonicas y elementos sobredimensionados para escala universitaria.
+
+\section{Evidencias de lectura y verificaci\'on}
+% TODO: Insertar capturas reales del articulo oficial subrayado personalmente por
+% el estudiante y almacenadas en docs/img/.
+
+\section{Declaraci\'on de uso de herramientas de Inteligencia Artificial}
+% TODO: Completar al finalizar el informe, detallando con transparencia todas las
+% intervenciones de herramientas de IA utilizadas durante la actividad.
+
+% ------------------------------------------------------------------------------
+% Bibliografia (BibLaTeX + Biber + estilo IEEE)
+% ------------------------------------------------------------------------------
+\printbibliography[title={Referencias}]
+
+\end{document}
