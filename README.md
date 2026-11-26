@@ -2,12 +2,15 @@
 
 ## Datos generales de la actividad
 
-- **Actividad:** FORM-IC-01 — Investigación Individual: Arquitecturas Distribuidas en la Industria *(preparatoria para el informe académico individual TA-IND-02 de la semana 6)*
+- **Actividad:** FORM-IC-01 — Investigación Individual: Arquitecturas Distribuidas en la Industria
 - **Universidad:** Universidad Técnica Estatal de Quevedo (UTEQ)
-- **Carrera:** Ingeniería de Software
-- **Asignatura:** Aplicaciones Distribuidas
-- **Semana:** 5
-- **Modalidad:** Individual
+- **Facultad:** Facultad de Ciencias de la Computación
+- **Carrera:** Software (Ingeniería de Software)
+- **Asignatura:** Aplicaciones Distribuidas (`ISR-701`)
+- **Periodo académico:** Segundo Periodo Académico Ordinario (SPA) 2026–2027
+- **Docente:** Gleiston Cicerón Guerrero Ulloa, PhD
+- **Nivel / Paralelo:** Séptimo nivel / A
+- **Semana / Modalidad:** Semana 5 / Individual
 - **Estudiante:** Luis Alberto Paca Pilataza
 - **Empresa seleccionada:** Datalex
 - **Patrón arquitectónico:** API Gateway
@@ -46,24 +49,38 @@ FORM-IC-01-Investigaci-n-Individual-Arquitecturas-Distribuidas-en-la-Industria/
   - Esqueletos iniciales de `docs/main.tex` y `docs/entrega_SGA.tex` configurados con `biblatex` (estilo IEEE, backend Biber).
   - Análisis técnico verificado de la fuente oficial de AWS sobre el caso Datalex.
   - Búsqueda y verificación directa de DOI en páginas oficiales de editoriales para dos referencias académicas recientes, incorporadas junto a la fuente empresarial en `docs/referencias.bib`.
-- **Pendiente para fases posteriores:**
-  - Lectura, subrayado personal y captura real de evidencias en `docs/img/`.
-  - Completar campos institucionales pendientes (facultad, docente, curso/paralelo, fecha de entrega).
-  - Redacción definitiva de autoría propia en `docs/main.tex` y `docs/entrega_SGA.tex`, incluida la declaración final de uso de IA.
-  - Compilación de los documentos PDF finales y gestión manual de commits/push en Git.
+- **Pendiente para completar la entrega:**
+  - Lectura, subrayado personal y capturas reales de evidencias en `docs/img/`.
+  - Redacción definitiva de autoría propia en `docs/main.tex`, incluida la declaración final de uso de IA.
+  - Compilación y verificación de `docs/main.pdf` y `docs/entrega_SGA.pdf` (una sola página con la URL completa en una sola línea).
+  - Gestión manual de commits progresivos y `push` en Git.
 
-> **Importante:** Los documentos LaTeX (`docs/main.tex` y `docs/entrega_SGA.tex`) se encuentran todavía en preparación estructural y **no han sido compilados** durante esta primera fase.
+> **Importante:** Los documentos LaTeX (`docs/main.tex` y `docs/entrega_SGA.tex`) aún están en preparación y todavía **no han sido compilados**.
 
 ---
 
-## Instrucciones previstas de compilación (para la fase definitiva)
+## Instrucciones de compilación (Criterio P2)
 
-Cuando el contenido académico esté redactado y revisado, los documentos se compilarán desde la carpeta `docs/` ejecutando:
+- **Compilador LaTeX:** `pdflatex` (TeX Live o MiKTeX).
+- **Procesador bibliográfico:** `biber` (backend de `biblatex` con estilo `ieee`).
+- **Archivo principal del informe:** `docs/main.tex` (bibliografía en `docs/referencias.bib`).
+- **Archivo de hoja de entrega para el SGA (1 página):** `docs/entrega_SGA.tex`.
+- **Dependencias (paquetes LaTeX requeridos):** `inputenc`, `fontenc`, `babel` (soporte `spanish`), `csquotes`, `geometry`, `graphicx`, `booktabs`, `hyperref`, `biblatex` y `biblatex-ieee`.
+
+### Orden de comandos desde la carpeta `docs/`
+
+Para compilar el informe principal (`main.pdf`):
 
 ```bash
 pdflatex main.tex
 biber main
 pdflatex main.tex
 pdflatex main.tex
+```
+
+Para compilar la hoja de entrega de una sola página para el SGA (`entrega_SGA.pdf`):
+
+```bash
+pdflatex entrega_SGA.tex
 ```
 

@@ -1,67 +1,67 @@
 % ==============================================================================
-% FORM-IC-01 - Plantilla inicial del documento de entrega para el SGA (1 pagina)
-% Estado: Esqueleto inicial (Fase 1 - sin redaccion definitiva ni compilacion)
+% FORM-IC-01 - Hoja de entrega para el SGA (estrictamente UNA SOLA pagina)
+% Cumple Norma 6.2 y Criterio de piso P1 del Encuadre Academico (ISR-701):
+%   - Unicamente datos identificativos
+%   - URL completa del repositorio escrita en UNA SOLA LINEA
+% Compilacion prevista (desde docs/):
+%   pdflatex entrega_SGA.tex
 % ==============================================================================
 
 \documentclass[11pt,a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish,es-tabla]{babel}
-\usepackage{csquotes}
+\usepackage[spanish]{babel}
 \usepackage[margin=2cm]{geometry}
 \usepackage{booktabs}
 \usepackage[hidelinks]{hyperref}
-
-\usepackage[
-  backend=biber,
-  style=ieee,
-  sorting=none
-]{biblatex}
-\addbibresource{referencias.bib}
 
 \pagestyle{empty}
 
 \begin{document}
 
+\vspace*{1.5cm}
+
 \begin{center}
-  {\large \textbf{UNIVERSIDAD T\'ECNICA ESTATAL DE QUEVEDO (UTEQ)}}\\[0.15cm]
-  {\normalsize Carrera de Ingenier\'ia de Software -- Aplicaciones Distribuidas}\\[0.25cm]
-  {\large \textbf{FORM-IC-01: Hoja de Entrega SGA (Una P\'agina)}}
+  {\Large \textbf{UNIVERSIDAD T\'ECNICA ESTATAL DE QUEVEDO}}\\[0.25cm]
+  {\large Facultad de Ciencias de la Computaci\'on}\\[0.15cm]
+  {\large Carrera de Software}\\[1.0cm]
+  \rule{\textwidth}{0.8pt}\\[0.45cm]
+  {\LARGE \textbf{Hoja de Entrega -- SGA}}\\[0.25cm]
+  {\large FORM-IC-01: Investigaci\'on Individual -- Arquitecturas Distribuidas en la Industria}\\[0.25cm]
+  \rule{\textwidth}{0.8pt}
 \end{center}
 
-\vspace{0.3cm}
-\noindent
-\begin{tabular}{@{}p{4.3cm}p{12.2cm}@{}}
+\vspace{1.0cm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{}p{4.8cm}p{11.6cm}@{}}
   \toprule
-  \textbf{Estudiante:}           & Luis Alberto Paca Pilataza \\
-  \textbf{Actividad:}            & FORM-IC-01 -- Investigaci\'on Individual: Arquitecturas Distribuidas en la Industria \\
-  \textbf{Semana / Modalidad:}   & Semana 5 / Individual (preparatoria para TA-IND-02, Semana 6) \\
-  \textbf{Docente:}              & [Completar: Nombre del docente] \\
-  \textbf{Curso / Paralelo:}     & [Completar: Curso y paralelo] \\
-  \textbf{Fecha de entrega:}     & [Completar: Fecha de entrega] \\
-  \textbf{Empresa y patr\'on:}   & Datalex -- Patr\'on API Gateway (Amazon API Gateway) \\
-  \textbf{Repositorio GitHub:}   & \url{https://github.com/Luis-paca/FORM-IC-01-Investigaci-n-Individual-Arquitecturas-Distribuidas-en-la-Industria} \\
+  \textbf{Universidad:}           & Universidad T\'ecnica Estatal de Quevedo (UTEQ) \\
+  \textbf{Facultad:}              & Facultad de Ciencias de la Computaci\'on \\
+  \textbf{Carrera:}               & Software (Ingenier\'ia de Software) \\
+  \textbf{Asignatura:}            & Aplicaciones Distribuidas (ISR-701) \\
+  \textbf{Periodo acad\'emico:}   & Segundo Periodo Acad\'emico Ordinario (SPA) 2026--2027 \\
+  \textbf{C\'odigo y actividad:}  & FORM-IC-01 -- Investigaci\'on Individual: Arquitecturas Distribuidas en la Industria \\
+  \textbf{Integrante:}            & Luis Alberto Paca Pilataza \\
+  \textbf{Docente:}               & Gleiston Cicer\'on Guerrero Ulloa, PhD \\
+  \textbf{Nivel / Paralelo:}      & S\'eptimo nivel / A \\
+  \textbf{Fecha:}                 & 28 de noviembre de 2026 \\
   \bottomrule
 \end{tabular}
+\end{center}
 
-\section*{1. S\'intesis de la investigaci\'on}
-% TODO: Redactar en 1 parrafo breve (autoria del estudiante) el enfoque del caso
-% Datalex y el patron API Gateway, citando las fuentes verificadas cuando corresponda.
+\vspace{1.2cm}
 
-\section*{2. Productos entregados en el repositorio}
-\begin{itemize}
-  \item \texttt{docs/main.tex} y PDF compilado del informe acad\'emico (\textit{[Pendiente de compilaci\'on]}).
-  \item \texttt{docs/referencias.bib}: fuente empresarial oficial y dos referencias acad\'emicas verificadas por DOI.
-  \item \texttt{docs/img/}: capturas reales de lectura y subrayado personal (\textit{[Pendiente de incorporaci\'on]}).
-\end{itemize}
+\noindent\textbf{URL del repositorio p\'ublico de GitHub (canal \'unico de entrega):}
 
-\section*{3. Enlaces y verificaci\'on de fuentes principales}
-% TODO: Confirmar en Fase 2 si se mostraran las citas aqui mediante \printbibliography
-% o un listado resumido acorde a las rubricas del SGA.
+\vspace{0.35cm}
 
-\section*{4. Declaraci\'on de autor\'ia y uso de IA}
-% TODO: Completar antes de la entrega final en el SGA, indicando con transparencia
-% la autoria del estudiante y el alcance real del apoyo recibido mediante IA.
+\begin{center}
+  \fbox{\parbox{0.97\textwidth}{\centering\scriptsize
+    \url{https://github.com/Luis-paca/FORM-IC-01-Investigaci-n-Individual-Arquitecturas-Distribuidas-en-la-Industria}
+  }}
+\end{center}
 
 \end{document}
