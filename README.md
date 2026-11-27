@@ -1,18 +1,20 @@
-# FORM-IC-01 — Investigación Individual: Arquitecturas Distribuidas en la Industria
+# FORM-IC-01 — Investigación Individual — Arquitecturas Distribuidas en la Industria
 
 ## Datos generales de la actividad
 
-- **Actividad:** FORM-IC-01 — Investigación Individual: Arquitecturas Distribuidas en la Industria
-- **Universidad:** Universidad Técnica Estatal de Quevedo (UTEQ)
+- **Universidad:** Universidad Técnica Estatal de Quevedo
 - **Facultad:** Facultad de Ciencias de la Computación
-- **Carrera:** Software (Ingeniería de Software)
-- **Asignatura:** Aplicaciones Distribuidas (`ISR-701`)
-- **Periodo académico:** Segundo Periodo Académico Ordinario (SPA) 2026–2027
+- **Carrera:** Software
+- **Asignatura:** Aplicaciones Distribuidas
+- **Código:** `ISR-701`
 - **Docente:** Gleiston Cicerón Guerrero Ulloa, PhD
-- **Nivel / Paralelo:** Séptimo nivel / A
-- **Semana / Modalidad:** Semana 5 / Individual
 - **Estudiante:** Luis Alberto Paca Pilataza
-- **Empresa seleccionada:** Datalex
+- **Nivel:** Séptimo
+- **Paralelo:** A
+- **Período académico:** SPA 2026–2027
+- **Semana:** 5
+- **Actividad:** FORM-IC-01 — Investigación Individual — Arquitecturas Distribuidas en la Industria
+- **Caso de estudio:** Datalex
 - **Patrón arquitectónico:** API Gateway
 
 ---
