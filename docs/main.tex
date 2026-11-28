@@ -72,13 +72,13 @@ Datalex es una empresa especializada en soluciones de comercio electr\'onico par
 La soluci\'on anterior presentaba limitaciones t\'ecnicas y econ\'omicas asociadas a contratos multianuales con pagos fijos, creaci\'on manual de API y ausencia de cuotas individuales~\cite{prenty2020datalex}. Amazon API Gateway permiti\'o adoptar un modelo de pago por consumo, compatibilidad con OpenAPI y gesti\'on granular del tr\'afico mediante planes de uso y mecanismos de \textit{throttling}~\cite{prenty2020datalex}. Estas capacidades justifican la elecci\'on desde una perspectiva de eficiencia operativa~\cite{aydemir2025apigateway,moreira2023age}. No obstante, se identifica como compromiso arquitect\'onico la dependencia tecnol\'ogica (\textit{vendor lock-in}) del ecosistema AWS, que podr\'ia incrementar la complejidad y los costos de una futura migraci\'on.
 
 \subsection*{C. Beneficios obtenidos}
-\textit{[Pendiente de redacci\'on propia del estudiante: beneficios operativos y resultados medibles verificados (alcance exacto del ahorro de casi el 98 \%, plazo de dos semanas y continuidad reportada), diferenciando evidencia empresarial de limitaciones de medici\'on. Referencias previstas: \texttt{\textbackslash cite\{prenty2020datalex\}}, \texttt{\textbackslash cite\{aydemir2025apigateway\}}, \texttt{\textbackslash cite\{moreira2023age\}}.]}
+La migraci\'on redujo casi un 98\% el costo operativo de la soluci\'on API REST respecto al proveedor anterior, mediante un modelo de pago por consumo~\cite{prenty2020datalex}. Desde una perspectiva t\'ecnica, AWS CloudFormation permiti\'o automatizar la infraestructura como c\'odigo, mientras que los planes de uso facilitaron el control granular del tr\'afico por clave API~\cite{prenty2020datalex}. La empresa report\'o una migraci\'on inicial sin interrupciones del servicio~\cite{prenty2020datalex}. La fuente empresarial no aporta m\'etricas de latencia, rendimiento ni tasas de error~\cite{prenty2020datalex}, necesarias para evaluar cuantitativamente el impacto t\'ecnico de la migraci\'on~\cite{aydemir2025apigateway,moreira2023age}.
 
 \subsection*{D. Desaf\'ios y soluciones}
-\textit{[Pendiente de redacci\'on propia del estudiante: retos t\'ecnicos de compatibilidad hacia atr\'as y continuidad, soluci\'on en dos fases (Lambda Custom Authorizer con \texttt{usageIdentifierKey} y corte CNAME; CloudFormation y cabecera nativa \texttt{x-api-key}) y compromisos arquitect\'onicos o \textit{trade-offs}. Referencias previstas: \texttt{\textbackslash cite\{prenty2020datalex\}}, \texttt{\textbackslash cite\{moreira2023age\}}.]}
+El principal desaf\'io fue la incompatibilidad del mecanismo de transmisi\'on de las claves API existentes~\cite{prenty2020datalex}. Datalex implement\'o un autorizador personalizado mediante AWS Lambda para preservar la compatibilidad hacia atr\'as y, tras validar las API, redirigi\'o el tr\'afico mediante un registro DNS CNAME~\cite{prenty2020datalex}. En la segunda fase, AWS CloudFormation permiti\'o desplegar una versi\'on paralela que utilizaba la cabecera nativa \texttt{x-api-key}~\cite{prenty2020datalex}. La coexistencia temporal de ambas versiones facilit\'o la transici\'on de los consumidores, eliminando posteriormente el autorizador Lambda y reduciendo la complejidad arquitect\'onica y los costos operativos~\cite{prenty2020datalex}.
 
 \subsection*{E. Aplicaci\'on al Proyecto Fin de Curso}
-\textit{[Pendiente de confirmaci\'on del PFC de Aplicaciones Distribuidas y redacci\'on propia del estudiante: qu\'e pr\'acticas de Datalex adoptar y cu\'ales descartar seg\'un escala, complejidad operativa, costos y dependencia tecnol\'ogica. Referencias previstas: \texttt{\textbackslash cite\{prenty2020datalex\}}, \texttt{\textbackslash cite\{aydemir2025apigateway\}}, \texttt{\textbackslash cite\{moreira2023age\}}.]}
+Bolsa de Empleos UTEQ dispone de un \textit{backend} monol\'itico en capas, por lo que incorporar actualmente un API Gateway a\~nadir\'ia complejidad operativa y potencial sobrecarga de latencia. Se priorizar\'ia la estandarizaci\'on de contratos mediante OpenAPI~\cite{prenty2020datalex}, el versionado de interfaces, la limitaci\'on de solicitudes y el fortalecimiento de la seguridad existente. Se descartar\'ia la dependencia prematura de AWS y el uso de autorizadores Lambda~\cite{prenty2020datalex} sin requisitos de compatibilidad heredada. La incorporaci\'on de un API Gateway se evaluar\'ia ante una evoluci\'on hacia servicios independientes y necesidades verificables de gesti\'on centralizada del tr\'afico~\cite{aydemir2025apigateway,moreira2023age}.
 
 \clearpage
 
@@ -121,7 +121,23 @@ Las Figuras~\ref{fig:evidencia_01} a~\ref{fig:evidencia_04} recogen las capturas
 \clearpage
 
 \subsection*{Ejemplo de un sistema conocido de primera mano}
-\textit{[Pendiente de redacci\'on propia del estudiante: identificar un sistema real usado o trabajado de primera mano en el que se reconozca el patr\'on API Gateway, diferenci\'andolo t\'ecnicamente de una API REST simple, un proxy inverso o una arquitectura completa de microservicios, y explicando qu\'e funciones centraliza.]}
+Durante el desarrollo de Bolsa de Empleos UTEQ, se adquiri\'o experiencia en el consumo de API externas mediante solicitudes HTTP, gesti\'on de claves API, procesamiento de respuestas JSON y tratamiento de errores. Al inspeccionar la clase \texttt{JSearchRapidApiService} (Figuras~\ref{fig:evidencia_05} y~\ref{fig:evidencia_06}), se identific\'o el patr\'on API Gateway mediante la integraci\'on con RapidAPI, que utiliza las cabeceras \texttt{x-rapidapi-key} y \texttt{x-rapidapi-host} para gestionar el acceso y direccionar las solicitudes hacia JSearch~\cite{rapidapi2025security}.
+
+Esta integraci\'on permite reconocer las responsabilidades de intermediaci\'on, control de acceso y gesti\'on del tr\'afico estudiadas en el caso Datalex~\cite{prenty2020datalex}. La experiencia corresponde al consumo de servicios externos y a la revisi\'on de su integraci\'on, no a la implementaci\'on ni administraci\'on directa de un API Gateway propio.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{evidencia_05_rapidapi_configuracion.png}
+  \caption{Inspecci\'on del c\'odigo fuente en \texttt{JSearchRapidApiService}: configuraci\'on de \texttt{baseUrl} (\texttt{jsearch.p.rapidapi.com}), \texttt{rapidApiHost}, inyecci\'on de \texttt{rapidApiKey}, instancias \texttt{ObjectMapper} y \texttt{HttpClient}, y validaci\'on previa de la clave API sin exponer credenciales. Fuente: captura obtenida por el estudiante en el repositorio de Bolsa de Empleos UTEQ; mecanismo documentado en RapidAPI~\cite{rapidapi2025security}.}
+  \label{fig:evidencia_05}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{evidencia_06_rapidapi_consumo.png}
+  \caption{Construcci\'on y env\'io de la solicitud HTTP \texttt{GET} en \texttt{JSearchRapidApiService}: inclusi\'on de las cabeceras \texttt{x-rapidapi-key} y \texttt{x-rapidapi-host}, env\'io mediante \texttt{HttpClient}, validaci\'on de c\'odigos de estado HTTP y procesamiento JSON de la respuesta. Fuente: captura obtenida por el estudiante en el repositorio de Bolsa de Empleos UTEQ; esquema de autorizaci\'on documentado en RapidAPI~\cite{rapidapi2025security}.}
+  \label{fig:evidencia_06}
+\end{figure}
 
 \subsection*{Declaraci\'on de uso de inteligencia artificial}
 Conforme a las normas de integridad acad\'emica del encuadre de la asignatura, la Tabla~\ref{tab:declaracion_ia} estructura el registro del apoyo recibido mediante herramientas de inteligencia artificial, pendiente de revisi\'on y confirmaci\'on final del estudiante.
